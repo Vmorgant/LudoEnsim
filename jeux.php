@@ -1,52 +1,47 @@
-<!doctype html>
-
+<?php
+	include_once 'minimal.php';
+?>
 <html lang="fr">
-	<head>
-		<meta charset="utf-8">
-		<title>Ludothèque</title>
-		<link rel="stylesheet" type="text/css" href="design.css" media="all" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	</head>
-
-    
 	<body>
-	<div>
-		<div class = "banner"> 
-			<img class ="logo" src="Images/logo.jpg" alt="logo de LudoEnsim" /></a>
-			<ul id = "navbar">
-				<a href="index.php"><button class = button type="button">Accueil</button></a>
-				<a href="jeux.php"><button class = button type="button">Nos jeux</button></a>
-				<a href="reserver.php"><button class = button type="button">Réserver</button></a>
-				<a href="connection.php"><button class = button type="button">Se connecter</button></a>
-			</ul> 
-		</div>
-		
 		<div class = "textBox"> 
 			<p> Entrez ici votre recherche </p>
 			<div id = "searchbar"> 
 				<form action="recherche.php" method="post">
 				 <p>Nom : <input type="text" name="Name" /></p>
-				  <p>Age minimum : <select name="Age Minimum"></p>
-					<option value="None">Indifférent</option>
+				  <p>Age minimum : <select name="AgeMinimum"></p>
+					<option value="0">Indifférent</option>
 					<option value="3">3+</option>
 					<option value="7">7+</option>
 					<option value="10">10+</option>
 					<option value="15">15+</option>
 					<option value="18">18+</option>
 				 </select>
-				 <p>Age maximum : <select name="Age Maximum"></p>
-					<option value="None">Indifférent</option>
+				 <p>Age maximum : <select name="AgeMaximum"></p>
+					<option value="99">Indifférent</option>
 					<option value="3">3+</option>
 					<option value="7">7+</option>
 					<option value="10">10+</option>
 					<option value="15">15+</option>
 					<option value="18">18+</option>
 				 </select>
-				 <p>Type: <select name="Type"></p>
-					<option value="None">Indifférent</option>
-					<option value="3"></option>
+				 <p>Type : <select name="Type"></p>
+					<option value="'%'">Indifférent</option>
+					<?php
+						$QueryType = "SELECT TYPE FROM `jeux`";
+						$Type= $Connect->query($QueryType);
+						while ($Data = mysqli_fetch_array($Type) ){
+							$i=0;
+							echo "<option value='$Data[$i]'>$Data[$i]</option>";
+							$i++;
+						}
+					?>
 				 </select>
-				 <p><input type="submit" value="Rechercher"></p>
+				 <p>
+					En stock : </br>
+					<input type="radio" name="Stock" value="0" id="indifferent" /> <label for="indifferent">indifférent</label><br />
+					<input type="radio" name="Stock" value="1" id="oui" /> <label for="oui">Oui</label><br />
+				 </p>
+				 <p><input type="submit" value="Rechercher" name = "Rechercher"></p>
 				</form>
 			</div>
 		</div>
@@ -55,12 +50,8 @@
 			<p> Nos dernier jeux </p>
 			<!-- Slider-->
 		</div>
-		
-		
-	
-		<div class = "footer"> 
-			Retrouvez nous sur les réseaux sociaux !
-		</div>
-	</div>
 	</body>
 </html>
+<?php
+	mysqli_close($Connect);
+?>

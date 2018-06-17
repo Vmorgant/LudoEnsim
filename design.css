@@ -21,7 +21,6 @@ body{
 #navbar{ 
 	padding: 0;
 	margin: 0;
-	text-align: center;
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: center;
@@ -35,7 +34,8 @@ body{
 .button{
 	background-color: #607D8B;
 	border-radius : 13%;
-	padding: 12px 28px;
+	padding: 14px 40px;
+	text-align: center;
 	border : none;
 	color : white;
 }
@@ -59,11 +59,15 @@ body{
 	margin-right : 2%;
 	text-align :center;
 }
+.textBox li{
+	 list-style-type: none;
+	 text-align : left;
+	 margin-left : 20%;
+}
 
 #searchbar{ 
 	padding: 0;
 	margin: 0;
-	text-align: center;
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: center;
