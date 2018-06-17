@@ -10,6 +10,7 @@
 	<meta charset="utf-8">
 	<title>Ludothèque</title>
 	<link rel="stylesheet" type="text/css" href="design.css" media="all" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <div class = "banner"> 
@@ -34,5 +35,9 @@
 </div>
 
 <div class = "footer"> 
-	Retrouvez nous sur les réseaux sociaux !
+	<p>
+			Retrouvez nous sur les réseaux sociaux !</br>
+		<i class="fa fa-facebook-official" style="font-size:24px"></i>
+		<i class="fa fa-twitter" style="font-size:24px"></i>
+	</p>
 </div>

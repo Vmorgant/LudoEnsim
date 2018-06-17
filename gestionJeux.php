@@ -42,7 +42,7 @@
 				 <p><input type="submit" value="Ajouter" name = "Ajouter"></p>
 				</form>
 		</div>
-		<div>
+		<div class = "textBox">
 		<?php
 			$QueryJeux = "SELECT `IDJEU`,`NOMJEU`,`NBBOITE`,`NBDISPO` FROM `jeux`";
 			$Result= $Connect->query($QueryJeux);

@@ -12,7 +12,7 @@
 				$AgeMax=$_POST['AgeMaximum'];
 				$Type = $_POST['Type'];
 				$Stock = $_POST['Stock'];
-				$QueryJeux = "SELECT * FROM `jeux` WHERE `NOMJEU` LIKE $nom AND `AGEMIN`>=$AgeMin AND `AGEMAX` <= $AgeMax AND `TYPE` LIKE $Type AND `NBDISPO >= $Stock`";
+				$QueryJeux = "SELECT * FROM `jeux` WHERE `NOMJEU` LIKE $nom AND `AGEMIN`>=$AgeMin AND `AGEMAX` <= $AgeMax AND `TYPE` LIKE $Type AND `NBDISPO` >= $Stock";
 				$Result= $Connect->query($QueryJeux);
 				/**TODO**/
 				/*if ($Result){

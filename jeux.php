@@ -38,7 +38,7 @@
 				 </select>
 				 <p>
 					En stock : </br>
-					<input type="radio" name="Stock" value="0" id="indifferent" /> <label for="indifferent">indifférent</label><br />
+					<input type="radio" name="Stock" value="0" id="indifferent" checked /> <label for="indifferent">indifférent</label><br />
 					<input type="radio" name="Stock" value="1" id="oui" /> <label for="oui">Oui</label><br />
 				 </p>
 				 <p><input type="submit" value="Rechercher" name = "Rechercher"></p>
@@ -47,8 +47,17 @@
 		</div>
 		
 		<div class = "textBox"> 
-			<p> Nos dernier jeux </p>
-			<!-- Slider-->
+			<p> Nos dernier jeux 
+			<div id="slider">
+				<figure>
+				<img src="Images/timeBomb.png" alt "timeBomb">
+				<img src="Images/timeBomb.png" alt>
+				<img src="Images/timeBomb.png" alt>
+				<img src="Images/timeBomb.png" alt>
+				<img src="Images/timeBomb.png" alt>
+				</figure>
+			</div>
+			</p>
 		</div>
 	</body>
 </html>

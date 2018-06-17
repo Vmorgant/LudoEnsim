@@ -6,7 +6,7 @@
 	<body>
 		<div class = "textBox"> 
 			<p>
-				 Horaires d'ouvertures : 
+				<li><b>Horaires d'ouvertures : </b></li>
 				<li>Lundi : 15h 18h</li>
 				<li>Mardi : 8h 12h 14h 18h</li>
 				<li>Mercredi : 8h 12h 14h 18h</li>
