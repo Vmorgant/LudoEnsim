@@ -5,7 +5,20 @@ body{
 	margin: 0;
 	padding: 0;
 }
+#page {
+	min-height:100vh; 
+	display:flex; 
+	flex-direction:column; 
+}
 
+.content {
+	background-color : #ECECEC;
+	font-family : Garuda, Cambria;
+	height: 100%;
+	min-height :100%;
+	margin: 0;
+	padding: 0;
+}
 .logo{
     margin-bottom: 2%;
 	margin-top : 2%;
@@ -51,9 +64,6 @@ body{
   transform: translateY(4px);
 }
 .textBox{
-	display: flex;
-	flex-direction: column;
-	flex-wrap: wrap;
 	font-family : Garuda, Cambria;
 	margin-left : 2%;
 	margin-right : 2%;
@@ -64,53 +74,30 @@ body{
 	 text-align : center;
 }
 
-#searchbar{ 
-	padding: 0;
-	margin: 0;
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: center;
-	
-}
-
-.footer{
-	display: flex;
-	flex-direction: column;
-	flex-wrap: wrap;
-	position: fixed;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-	font-family : Garuda, Cambria;
-	background-color : #4183D7;
+.textBox table,th, td{
+	margin-left : 40%;
+	margin-right : 40%;
 	text-align : center;
+	border-style: solid;
+    border-width: 1px;
+	border-collapse: collapse;
 }
 
-div#slider {
-	width: 80%; 
-	max-width: 10%; 
-	max-height: 10%;
-	overflow: hidden;
-	
-} 
+
+div#slider { width: 80%; max-width: 100px; overflow :hidden; } 
 
 div#slider figure {
-  position: relative;
+  position: relative; 
   width: 500%;
   margin: 0;
   padding: 0;
   font-size: 0;
+  text-align: left;
   left: 0;
-  text-align: center;
   animation: 30s slidy infinite;
 }
 
-div#slider figure img { 
-	width: 20%; 
-	height: auto; 
-	float: left; 
-
-}
+div#slider figure img { width: 20%; height: auto; float: left; }
 
 @keyframes slidy {
   0% { left: 0%; }

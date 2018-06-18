@@ -8,8 +8,8 @@ $DB="ludoensim";
 
 /**BDD ENSIM
 $Server="e-srvlamp";
-$User="vous";
-$Pwd="";
+$User="s112192";
+$Pwd="mcw39bb";
 $DB="ludoensim";
 
 ***/

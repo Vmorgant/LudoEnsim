@@ -2,7 +2,7 @@
 	include_once 'minimal.php';
 ?>
 <html lang="fr">
-	<body>
+	<div class="content">
 		<div class = "textBox"> 
 				<form action="ajoutJeux.php" method="post">
 				 <p>Nom : <input type="text" name="nom" required /></p>
@@ -26,7 +26,7 @@
 					<input list="types" type="text" name="choixType" id="choixType" required></p>
 					 <datalist id="types">	
 							<?php
-								$QueryType = "SELECT TYPE FROM `jeux`";
+								$QueryType = "SELECT DISTINCT TYPE FROM `jeux`";
 								$Type= $Connect->query($QueryType);
 								while ($Data = mysqli_fetch_array($Type) ){
 									$i=0;
@@ -43,17 +43,17 @@
 				</form>
 		</div>
 		<div class = "textBox">
-		<?php
-			$QueryJeux = "SELECT `IDJEU`,`NOMJEU`,`NBBOITE`,`NBDISPO` FROM `jeux`";
-			$Result= $Connect->query($QueryJeux);
-			echo "<table> ";
-			echo"<tr><th>ID</th><th>NOM</th> <th>NBBOITE</th> <th>NBDISPO</th></tr>";
-			while ($Jeu = mysqli_fetch_array($Result) ){
-				echo " <tr><td>".$Jeu[0]."</td><td>".$Jeu[1]."</td><td>".$Jeu[2]."</td><td>".$Jeu[3]."</td></tr>";
-			}
-		?>
+			<?php
+				$QueryJeux = "SELECT `IDJEU`,`NOMJEU`,`NBBOITE`,`NBDISPO` FROM `jeux`";
+				$Result= $Connect->query($QueryJeux);
+				echo "<table> ";
+				echo"<tr><th>ID</th><th>NOM</th> <th>NBBOITE</th> <th>NBDISPO</th></tr>";
+				while ($Jeu = mysqli_fetch_array($Result) ){
+					echo " <tr><td>".$Jeu[0]."</td><td>".$Jeu[1]."</td><td>".$Jeu[2]."</td><td>".$Jeu[3]."</td></tr>";
+				}
+			?>
 		</div>
-	</body>
+	</div>
 </html>
 <?php
 	mysqli_close($Connect);

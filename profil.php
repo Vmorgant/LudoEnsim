@@ -2,7 +2,7 @@
 	include_once 'minimal.php';
 ?>
 <html lang="fr">
-	<body>
+	<div class="content">
 		<div class = "textBox"> 
 			<p>
 			<?php
@@ -12,7 +12,7 @@
 			?>
 			</p>
 		</div>
-	</body>
+	</div>
 </html>
 <?php
 	mysqli_close($Connect);

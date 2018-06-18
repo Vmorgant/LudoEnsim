@@ -7,8 +7,10 @@ include_once 'minimal.php';
 					$Query = "SELECT `LOGIN`, `ADMIN`, `ID` FROM `profil` WHERE `MDP` = '".$pass."' AND `LOGIN` = '".$login."'";
 					echo "<br />";
 					$Result= $Connect->query($Query);
+					$log=0;
 					while($data = mysqli_fetch_array($Result)){
 						if ($data[0] == $login){
+							$log=1;
 							$_SESSION["Admin"]=$data[1];
 							$id=$data[2];
 							$QueryAdherent="SELECT * FROM `adherents` WHERE `IDCLIENT` = '".$id."'";
@@ -20,10 +22,9 @@ include_once 'minimal.php';
 							$_SESSION["FinAdhesion"]=$data[3];
 							header("location:profil.php");
 						}
-						else
-							echo "Login ou Mot de passe incorrect";
-				
-					}		
+					}
+					if($log ==0)
+						echo "login ou mot de passe incorrect";
 				}
 				else echo "Toutes les cases du formulaire ne sont pas remplies";
 			}

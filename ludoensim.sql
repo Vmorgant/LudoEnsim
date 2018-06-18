@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  Dim 17 juin 2018 à 16:30
+-- Généré le :  lun. 18 juin 2018 à 16:08
 -- Version du serveur :  5.7.21
 -- Version de PHP :  5.6.35
 
@@ -125,8 +125,17 @@ CREATE TABLE IF NOT EXISTS `reservation` (
   `DATE` date NOT NULL,
   `IDJEU` int(5) NOT NULL,
   `IDADHERENT` int(5) NOT NULL,
-  `DATEFIN` int(11) NOT NULL
+  `DATEFIN` date NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+--
+-- Déchargement des données de la table `reservation`
+--
+
+INSERT INTO `reservation` (`ID`, `DATE`, `IDJEU`, `IDADHERENT`, `DATEFIN`) VALUES
+(1, '2018-06-18', 1, 1, '2018-07-02'),
+(2, '2018-06-18', 1, 2, '2018-07-02'),
+(3, '2018-06-18', 1, 2, '2018-07-02');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

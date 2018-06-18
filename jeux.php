@@ -2,10 +2,9 @@
 	include_once 'minimal.php';
 ?>
 <html lang="fr">
-	<body>
+	<div class="content">
 		<div class = "textBox"> 
 			<p> Entrez ici votre recherche </p>
-			<div id = "searchbar"> 
 				<form action="recherche.php" method="post">
 				 <p>Nom : <input type="text" name="Name" /></p>
 				  <p>Age minimum : <select name="AgeMinimum"></p>
@@ -27,7 +26,7 @@
 				 <p>Type : <select name="Type"></p>
 					<option value="'%'">Indifférent</option>
 					<?php
-						$QueryType = "SELECT TYPE FROM `jeux`";
+						$QueryType = "SELECT DISTINCT TYPE FROM `jeux`";
 						$Type= $Connect->query($QueryType);
 						while ($Data = mysqli_fetch_array($Type) ){
 							$i=0;
@@ -43,23 +42,21 @@
 				 </p>
 				 <p><input type="submit" value="Rechercher" name = "Rechercher"></p>
 				</form>
-			</div>
 		</div>
 		
 		<div class = "textBox"> 
-			<p> Nos dernier jeux 
-			<div id="slider">
-				<figure>
-				<img src="Images/timeBomb.png" alt "timeBomb">
-				<img src="Images/timeBomb.png" alt>
-				<img src="Images/timeBomb.png" alt>
-				<img src="Images/timeBomb.png" alt>
-				<img src="Images/timeBomb.png" alt>
-				</figure>
-			</div>
-			</p>
+			Nos dernier jeux :
+				<div id="slider">
+					<figure>
+						<img src="Images/timeBomb.png" alt "timeBomb">
+						<img src="Images/timeBomb.png" alt>
+						<img src="Images/timeBomb.png" alt>
+						<img src="Images/timeBomb.png" alt>
+						<img src="Images/timeBomb.png" alt>
+					</figure>
+				</div>
 		</div>
-	</body>
+	</div>
 </html>
 <?php
 	mysqli_close($Connect);

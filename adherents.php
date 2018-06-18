@@ -2,7 +2,7 @@
 	include_once 'minimal.php';
 ?>
 <html lang="fr">
-	<body>
+	<div class="content">
 		<div class = "textBox"> 
 			
 			<form action="ajoutAdherent.php" method="post">
@@ -17,17 +17,17 @@
 					</form>
 		</div>
 		<div class = "textBox"> 
-		<?php
-			$Query = "SELECT * FROM `adherents`"; 
-			$Result= $Connect->query($Query);
-			echo "<table> ";
-			echo"<tr><th>ID</th><th>NOM</th> <th>PRENOM</th> <th>FIN ADHESION</th></tr>";
-			while ($Adh = mysqli_fetch_array($Result) ){
-				echo " <tr><td>".$Adh[0]."</td><td>".$Adh[1]."</td><td>".$Adh[2]."</td><td>".$Adh[3]."</td></tr>";
-			}
-		?>
+			<?php
+				$Query = "SELECT * FROM `adherents`"; 
+				$Result= $Connect->query($Query);
+				echo "<table> ";
+				echo"<tr><th>ID</th><th>NOM</th> <th>PRENOM</th> <th>FIN ADHESION</th></tr>";
+				while ($Adh = mysqli_fetch_array($Result) ){
+					echo " <tr><td>".$Adh[0]."</td><td>".$Adh[1]."</td><td>".$Adh[2]."</td><td>".$Adh[3]."</td></tr>";
+				}
+			?>
 		</div>
-	</body>
+	</div>
 </html>
 <?php
 	mysqli_close($Connect);
