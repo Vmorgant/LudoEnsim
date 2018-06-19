@@ -2,9 +2,8 @@
 	include_once 'minimal.php';
 ?>
 <html lang="fr">
-	<div class="content">
+	<body>
 		<div class = "textBox"> 
-			<p>
 			<?php
 				$ID=$_SESSION['ID'];
 				echo "<div class = 'textBox'> Bonjour ".$_SESSION['Prenom']." ".$_SESSION['Nom'].".</div>";
@@ -18,10 +17,10 @@
 					echo " <tr><td>".$Jeu[0]."</td><td>".$Jeu[1]."</td><td>".$Jeu[2]."</td></tr>";
 				}
 			?>
-			</p>
-		</div>
-	</div>
+		</div>		
+	<body>
+	<?php
+		mysqli_close($Connect);
+	?>
+	
 </html>
-<?php
-	mysqli_close($Connect);
-?>

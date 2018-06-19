@@ -1,9 +1,16 @@
 body{
 	background-color : #ECECEC;
 	font-family : Garuda, Cambria;
-	height: 100%;
+	font-size:1vw;
 	margin: 0;
 	padding: 0;
+}
+footer{
+	font-family : Garuda, Cambria;
+	background-color : #4183D7;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
 }
 #page {
 	min-height:100vh; 
@@ -11,25 +18,16 @@ body{
 	flex-direction:column; 
 }
 
-.content {
-	background-color : #ECECEC;
-	font-family : Garuda, Cambria;
-	height: 100%;
-	min-height :100%;
-	margin: 0;
-	padding: 0;
-}
 .logo{
-    margin-bottom: 2%;
-	margin-top : 2%;
-	margin-left : 1%;
+    display: flex;
+	justify-content: center;
 	border-radius : 10px;
+	padding-left: 1%;
+	padding-top : 1%
 }
 .banner{
 	font-family : Garuda, Cambria;
 	background-color : #4183D7;
-	
-
 }
 #navbar{ 
 	padding: 0;
@@ -65,10 +63,11 @@ body{
 }
 .textBox{
 	font-family : Garuda, Cambria;
-	margin-left : 2%;
-	margin-right : 2%;
+	margin-left : 10%;
+	margin-right : 10%;
 	text-align :center;
 }
+
 .textBox li{
 	 list-style-type: none;
 	 text-align : center;
@@ -84,7 +83,7 @@ body{
 }
 
 
-div#slider { width: 80%; max-width: 100px; overflow :hidden; } 
+div#slider { width: 30%; max-width: 20%; overflow :hidden;margin-left: 40%;margin-right: 4%; } 
 
 div#slider figure {
   position: relative; 
@@ -92,8 +91,6 @@ div#slider figure {
   margin: 0;
   padding: 0;
   font-size: 0;
-  text-align: left;
-  left: 0;
   animation: 30s slidy infinite;
 }
 

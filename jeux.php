@@ -2,11 +2,11 @@
 	include_once 'minimal.php';
 ?>
 <html lang="fr">
-	<div class="content">
+	<body>
 		<div class = "textBox"> 
 			<p> Entrez ici votre recherche </p>
 				<form action="recherche.php" method="post">
-				 <p>Nom : <input type="text" name="Name" /></p>
+				 <p>Nom : <input type="text" name="nom" /></p>
 				  <p>Age minimum : <select name="AgeMinimum"></p>
 					<option value="0">Indifférent</option>
 					<option value="3">3+</option>
@@ -42,21 +42,18 @@
 				 </p>
 				 <p><input type="submit" value="Rechercher" name = "Rechercher"></p>
 				</form>
-		</div>
-		
-		<div class = "textBox"> 
-			Nos dernier jeux :
+				
 				<div id="slider">
 					<figure>
+						Nos dernier jeux :
 						<img src="Images/timeBomb.png" alt "timeBomb">
-						<img src="Images/timeBomb.png" alt>
-						<img src="Images/timeBomb.png" alt>
-						<img src="Images/timeBomb.png" alt>
-						<img src="Images/timeBomb.png" alt>
+						<img src="Images/battlestargalactica.jpeg" alt " battlestargalactica">
+						<img src="Images/BlancMangerCoco.jpg" alt "BlancMangerCoco">
+						<img src="Images/unlock.jpg" alt "unlock">
+						<img src="Images/timeBomb.png" alt "timeBomb">
 					</figure>
-				</div>
 		</div>
-	</div>
+	</body>
 </html>
 <?php
 	mysqli_close($Connect);

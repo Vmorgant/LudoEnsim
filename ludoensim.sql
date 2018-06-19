@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  lun. 18 juin 2018 à 16:08
+-- Généré le :  mar. 19 juin 2018 à 20:43
 -- Version du serveur :  5.7.21
 -- Version de PHP :  5.6.35
 
@@ -70,23 +70,9 @@ CREATE TABLE IF NOT EXISTS `jeux` (
 --
 
 INSERT INTO `jeux` (`IDJEU`, `NOMJEU`, `AGEMIN`, `AGEMAX`, `TYPE`, `DESCRIPTION`, `NBBOITE`, `NBDISPO`) VALUES
-(1, 'battlestar galactica', 10, 99, 'strategie', 'Après l\'attaque des Cylons sur les Colonies, les survivants exsangues de la race humaine sont en fuite, à la recherche de la Terre. Ils font face à la menace extérieure d\'une attaque des Cylons, et à la menace intérieure d\'une crise et d\'une trahison. \r\nL\'humanité doit travailler de concert si elle veut avoir un espoir de survie… mais comment faire quand elle peut abriter en son sein un agent Cylon ? Battlestar Galactica est un jeu de suspicion, d\'intrigues et de lutte pour la survie de l’humanité. Devenez Amiral de la Flotte Coloniale, Président des Colonies, ou pilote de Viper. La race humaine aura besoin de chacun d\'entre vous pour survivre… sauf si vous êtes un Cylon, bien sûr', 3, 3),
+(1, 'battlestar galactica', 10, 99, 'strategie', 'Après l\'attaque des Cylons sur les Colonies, les survivants exsangues de la race humaine sont en fuite, à la recherche de la Terre. Ils font face à la menace extérieure d\'une attaque des Cylons, et à la menace intérieure d\'une crise et d\'une trahison. \r\nL\'humanité doit travailler de concert si elle veut avoir un espoir de survie... mais comment faire quand elle peut abriter en son sein un agent Cylon ? Battlestar Galactica est un jeu de suspicion, d\'intrigues et de lutte pour la survie de l\’humanité. Devenez Amiral de la Flotte Coloniale, Président des Colonies, ou pilote de Viper. La race humaine aura besoin de chacun d\'entre vous pour survivre... sauf si vous êtes un Cylon, bien sûr', 3, 3),
 (2, 'Blanc Manger Coco', 18, 99, 'humour', 'Parce qu\'on ne rit jamais assez, parce qu\'on a le droit de rire de TOUT, nous avons créé Blanc-manger Coco, le jeu parfait pour animer vos apéros. Un joueur lit une carte question, une phrase à trou, et les autres complètent la phrase en proposant, face cachée, une carte réponse. Le joueur qui a lu la question, choisit la réponse qu\'il préfère et désigne ainsi le vainqueur de la manche. Toute la magie du jeu réside dans le décalage total entre questions et réponses : vous verrez par vous-même.', 3, 3),
 (3, 'Loups-Garous', 0, 99, 'strategie', 'Les nuits ne sont pas sûres dans le petit hameau de Thiercelieux. D\'atroces meurtres sont commis par des villageois lycanthropes.\r\nThiercelieux, bourgade tranquille.\r\nLe jeu est composé de 24 cartes permettant de faire jouer jusqu\'à 18 personnes et un meneur de jeu. Ces cartes indiquent le type de personnages que chaque joueur va incarner durant la partie dirigée par le meneur.', 4, 4);
-
--- --------------------------------------------------------
-
---
--- Structure de la table `pret`
---
-
-DROP TABLE IF EXISTS `pret`;
-CREATE TABLE IF NOT EXISTS `pret` (
-  `IDCLIENT` int(5) NOT NULL,
-  `IDJEU` int(5) NOT NULL,
-  `DATEEMPRUNT` date NOT NULL,
-  `DATERETOUR` date NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -133,9 +119,9 @@ CREATE TABLE IF NOT EXISTS `reservation` (
 --
 
 INSERT INTO `reservation` (`ID`, `DATE`, `IDJEU`, `IDADHERENT`, `DATEFIN`) VALUES
-(1, '2018-06-18', 1, 1, '2018-07-02'),
-(2, '2018-06-18', 1, 2, '2018-07-02'),
-(3, '2018-06-18', 1, 2, '2018-07-02');
+(1, '2018-06-19', 2, 2, '2018-07-03'),
+(2, '2018-06-19', 1, 2, '2018-07-03'),
+(3, '2018-06-19', 1, 1, '2018-07-03');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
