@@ -10,8 +10,8 @@ $DB="ludoensim";
 $Server="e-srvlamp";
 $User="s112192";
 $Pwd="mcw39bb";
-$DB="ludoensim";
+$DB="s112192";
+**/
 
-***/
 
 ?>

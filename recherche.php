@@ -19,8 +19,9 @@
 						$res=1;
 						echo "<div class = 'textBox'> ".$Jeu[1]." </br>  de ".$Jeu[2]." à ".$Jeu[3]." ans </br> genre : ".$Jeu[4]." </br> </br> ".utf8_encode($Jeu[5])."</div> ";
 						echo "<br />";
+						$date=date("Y-m-d");
 						if(!empty($_SESSION)){
-							if($Jeu[7] > 0){
+							if($Jeu[7] > 0  && (strtotime($date) < strtotime($_SESSION["FinAdhesion"]))){
 								echo "<form method='post' action='' >
 										<input id='ID' name='ID' type='hidden' value=".$Jeu[0].">
 										<input id='Stock' name='Stock' type='hidden' value=".$Jeu[7].">
@@ -29,9 +30,11 @@
 						
 								
 							}
-							else{
+							else if ($Jeu[7] > 0) {
 								echo "Plus de stock";
 							}
+							else 
+								echo "Votre adhésion n'est plus valide";
 							
 								if($_SESSION['Admin']==1 && $Jeu[7] < $Jeu[6]) {
 									echo "<form method='post' action='' >
@@ -42,8 +45,8 @@
 								}
 						}
 					}
-				if (res==0){
-					echo "votre recherche n'a renvoyé aucun résultat";
+				if ($res==0){
+					echo " </br></br><div class = 'textBox'> Votre recherche n'a renvoyé aucun résultat</div> ";
 				}
 			}
 			if(!empty($_SESSION)){
@@ -51,14 +54,13 @@
 							print_r($_POST);
 								$nb=$_POST['Stock']-1;
 								$QueryStock="UPDATE `jeux` SET `NBDISPO`= $nb WHERE `IDJEU`=".$_POST['ID']."";
-								echo $QueryStock;
 								$ResultStock= $Connect->query($QueryStock);
 								$Query=	"SELECT MAX(`ID`) FROM `reservation`";
 								$Max = $Connect->query($Query);
 								$Data = mysqli_fetch_array($Max);
 								$ID=$Data[0]+1;
 								$Date=date("Y-m-d");
-								$DateFin=date("Y-m-d", strtotime("+2 weeks"));
+								$DateFin=date("Y-m-d", strtotime("+1 month"));
 								$QueryResa = "INSERT INTO `reservation`(`ID`, `DATE`, `IDJEU`, `IDADHERENT`, `DATEFIN`) VALUES (".$ID.",'".$Date."',".$_POST['ID'].",".$_SESSION["ID"].",'".$DateFin."')";
 								$Result= $Connect->query($QueryResa);
 								header("location:index.php");								
