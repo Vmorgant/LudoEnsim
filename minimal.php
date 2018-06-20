@@ -4,6 +4,7 @@
 	$Connect = mysqli_connect($Server, $User, $Pwd, $DB);
 	if (!$Connect)
 		echo "Connexion à la base impossible";
+	date_default_timezone_set('Europe/Paris');
 ?>
 <!DOCTYPE html  >
 <html lang="fr">
